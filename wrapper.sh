@@ -8,5 +8,3 @@ if [[ "$(docker images -q jdoubleu/gdb 2> /dev/null)" == "" ]]; then
 fi
 
 docker run --rm -i -v $ProjDirPath:$ProjDirPath -w $CWD jdoubleu/gdb "$@"
-
-echo "$@"
