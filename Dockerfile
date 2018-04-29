@@ -5,6 +5,9 @@ RUN \
     apt-get update; \
     apt-get install -y -qq gdb gdbserver; \
     \
+    echo 'set startup-with-shell off' >> ~/.gdbinit; \
+    echo 'set disassembly-flavor intel' >> ~/.gdbinit; \
+    \
     rm -r /var/lib/apt/lists/*; \
     apt-get purge -y --auto-remove $buildDeps
 
