@@ -7,4 +7,4 @@ if [[ "$(docker images -q jdoubleu/gdb 2> /dev/null)" == "" ]]; then
   $BASEDIR/build.sh
 fi
 
-docker run --rm -i -v $ProjDirPath:$ProjDirPath -w $CWD jdoubleu/gdb "$@"
+docker run --rm -i -v $ProjDirPath:$ProjDirPath -w ${CWD-/app} --network host jdoubleu/gdb "$@"
